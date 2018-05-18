@@ -16,7 +16,7 @@
             <Image url="@../Image/DICT-Logo-icon_only.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="16.0" layoutY="148.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="16.0" />
+      <ImageView fx:id="ViewImage" fitHeight="150.0" fitWidth="200.0" layoutX="16.0" layoutY="148.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="16.0" />
       <Label layoutX="220.0" layoutY="16.0" text="Property No." AnchorPane.leftAnchor="220.0" AnchorPane.topAnchor="16.0">
          <font>
             <Font name="Verdana" size="18.0" />
