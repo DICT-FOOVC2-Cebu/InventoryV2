@@ -67,7 +67,6 @@ public class LoginController implements Initializable {
         con = dbCon.geConnection();
         if(con!=null){
             
-            if (isValidCondition()) {
                 User admin = new User();
                             if(textField1.getText().equals(admin.username)&&passwordField1.getText().equals(admin.password)){
 
@@ -84,15 +83,15 @@ public class LoginController implements Initializable {
                                 }
                             else
                               label1.setText("Wrong Username or Password !");
-                    } else {
-                        Alert alert = new Alert(Alert.AlertType.ERROR);
-                        alert.setTitle("Error");
-                        alert.setHeaderText("Error : Server Not Found");
-                        alert.setContentText("Make sure your mysql is Start properly, \n");
-                        alert.initStyle(StageStyle.UNDECORATED);
-                        alert.showAndWait();
-                    }
+            } else {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setHeaderText("Error : Server Not Found");
+                alert.setContentText("Make sure your mysql is Started properly. \n");
+                alert.initStyle(StageStyle.UNDECORATED);
+                alert.showAndWait();
             }
+            
         }
      
     
@@ -101,23 +100,6 @@ public class LoginController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         mkDbProperties();
-    }
-    private boolean isValidCondition() {
-        boolean validCondition;
-        if (textField1.getText().trim().isEmpty()
-                || passwordField1.getText().isEmpty()) {
-            Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setTitle("WARNING :");
-            alert.setHeaderText("WARNING !!");
-            alert.setContentText("Please Fill Text Field And Password Properly");
-            alert.initStyle(StageStyle.UNDECORATED);
-            alert.showAndWait();
-
-            validCondition = false;
-        } else {
-            validCondition = true;
-        }
-        return validCondition;
     }
     public void mkDbProperties() {
     Properties properties = new Properties();

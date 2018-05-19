@@ -46,7 +46,7 @@
          <center>
             <ImageView fitHeight="484.0" fitWidth="494.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
                <image>
-                  <Image url="@../Image/DICT-Logo-icon_only.png" />
+                  <Image url="@../Image/DICT-Logo.png" />
                </image>
             </ImageView>
          </center>

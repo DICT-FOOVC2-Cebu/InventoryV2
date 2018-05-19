@@ -57,7 +57,7 @@ public class DBModel {
                     + "  DEFAULT COLLATE utf8_general_ci");
             pst.execute();
             pst = con.mkDataBase().prepareStatement("CREATE TABLE if not exists "+db+".`AddItem` (\n"
-                    + "  `PropId` int(11) NOT NULL AUTO_INCREMENT,\n"
+                    + "  `ProdId` int(11) NOT NULL AUTO_INCREMENT,\n"
                     + "  `Image` mediumblob,\n"
                     + "  `SNNo` VARCHAR(20) NOT NULL,\n"
                     + "  `PARNo` VARCHAR(20) ,\n"
