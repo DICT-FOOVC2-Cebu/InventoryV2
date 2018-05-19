@@ -12,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="700.0" style="-fx-background-radius: 50;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="inventorysystemv2.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="700.0" style="-fx-background-radius: 50;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="inventorysystemv2.LoginController">
     <children>
       <ImageView fitHeight="468.0" fitWidth="729.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -40,7 +40,7 @@
             <Blend />
          </effect>
       </ImageView>
-        <Button fx:id="button" blendMode="EXCLUSION" layoutX="328.0" layoutY="259.0" onAction="#handleButtonAction" prefHeight="39.0" prefWidth="114.0" rotate="-1.0" style="-fx-background-radius: 100;" text="Login">
+        <Button fx:id="btnLogin" blendMode="EXCLUSION" layoutX="328.0" layoutY="259.0" onAction="#btnLogin" prefHeight="39.0" prefWidth="114.0" rotate="-1.0" style="-fx-background-radius: 100;" text="Login">
          <font>
             <Font name="System Bold" size="18.0" />
          </font></Button>

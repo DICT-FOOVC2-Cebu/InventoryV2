@@ -5,6 +5,7 @@
  */
 package inventorysystemv2;
 
+import database.DBModel;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -17,9 +18,14 @@ import javafx.stage.Stage;
  */
 public class InventorySystemV2 extends Application {
     
+    public InventorySystemV2(){
+        DBModel model = new DBModel();
+        model.createDataBase();
+    }
+    
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("LoginUI.fxml"));
         
         Scene scene = new Scene(root);
         
