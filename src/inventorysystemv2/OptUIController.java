@@ -30,7 +30,7 @@ public class OptUIController implements Initializable {
         
         
      
-     Parent RegViewParent = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
+     Parent RegViewParent = FXMLLoader.load(getClass().getResource("LoginUI.fxml"));
         
         Scene RegviewScene = new Scene(RegViewParent);
         

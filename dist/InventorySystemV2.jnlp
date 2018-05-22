@@ -8,7 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="InventorySystemV2.jar" size="455857" download="eager" />
+    <jar href="InventorySystemV2.jar" size="457087" download="eager" />
     <jar href="lib\core-3.3.2.jar" size="546512" download="eager" />
     <jar href="lib\mysql-connector-java-5.1.23-bin.jar" size="834126" download="eager" />
   </resources>

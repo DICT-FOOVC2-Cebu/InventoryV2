@@ -20,7 +20,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -80,24 +83,59 @@ private ComboBox cbStatus;
     ResultSet rs;
     DBProperties dBProperties = new DBProperties();
     String db = dBProperties.loadPropertiesFile();
-
-
+    
+    
 @FXML
 private void GenerateButton(ActionEvent event) throws IOException {
+        dbQuery();
+        FXMLLoader Loader = new FXMLLoader();
+        Loader.setLocation(getClass().getResource("GenerateUI.fxml"));
         
-         
-     
-     Parent RegViewParent = FXMLLoader.load(getClass().getResource("GenerateUI.fxml"));
+        try {
+            Loader.load();
+        }catch(IOException ex) {
+            Logger.getLogger(AddingUIController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        GenerateUIController generate = Loader.getController();
+        generate.setText(tfPARNo.getText(), tfSNNo.getText(), tfRemarks.getText());
+        generate.showQRCode(tfPARNo.getText());
+        
+        Parent RegViewParent = Loader.getRoot();
         
         Scene RegviewScene = new Scene(RegViewParent);
-        
-     
-        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Stage window = new Stage();
         window.setScene(RegviewScene);
-        window.show();
+        window.showAndWait();
     }
     @FXML
     private void saveButton(ActionEvent event) throws IOException {
+        dbQuery();
+
+//                if (users.imagePath != null) {
+//                    InputStream is;
+//                    is = new FileInputStream(new File(users.imagePath));
+//                    pst.setBlob(10, is);
+//                } else {
+//                    pst.setBlob(10, (Blob) null);
+//                }
+//                pst.setString(11, LocalDate.now().toString());
+//                pst.setString(12, users.creatorId);
+
+         
+    }
+    public void alertSuccessBox(){
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Sucess :");
+                alert.setHeaderText("Sucess");
+                alert.setContentText("Item " + item.parNo + " Added sucessfuly");
+                alert.initStyle(StageStyle.UNDECORATED);
+                alert.showAndWait();
+    }
+    /**
+     * Initializes the controller class.
+     */
+private void dbQuery(){
         item.parNo = tfPARNo.getText();
         item.snNo = tfSNNo.getText();
         item.issuedBy = tfIssuedBy.getText();
@@ -120,35 +158,21 @@ private void GenerateButton(ActionEvent event) throws IOException {
                 pst.setString(9, item.amount);
                 pst.setString(10, null);
                 pst.setString(11, null);
-//                if (users.imagePath != null) {
-//                    InputStream is;
-//                    is = new FileInputStream(new File(users.imagePath));
-//                    pst.setBlob(10, is);
-//                } else {
-//                    pst.setBlob(10, (Blob) null);
-//                }
-//                pst.setString(11, LocalDate.now().toString());
-//                pst.setString(12, users.creatorId);
+                
                 pst.executeUpdate();
                 pst.close();
                 con.close();
-
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Sucess :");
-                alert.setHeaderText("Sucess");
-                alert.setContentText("Item " + item.parNo + " Added sucessfuly");
-                alert.initStyle(StageStyle.UNDECORATED);
-                alert.showAndWait();
-
+                if(btnSave.isArmed()) alertSuccessBox();
             } catch (SQLException e) {
                 e.printStackTrace();
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setHeaderText("Error : Server Not Found");
+                alert.setContentText("Make sure your mysql is Started properly. \n");
+                alert.initStyle(StageStyle.UNDECORATED);
+                alert.showAndWait();
             }
-         
-    }
-    /**
-     * Initializes the controller class.
-     */
-  
+}
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO

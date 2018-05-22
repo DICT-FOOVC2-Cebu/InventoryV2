@@ -13,7 +13,7 @@
    <children>
       <ImageView fitHeight="101.0" fitWidth="126.0" layoutX="20.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="15.0">
          <image>
-            <Image url="@../Image/DICT-Logo-icon_only.png" />
+            <Image url="@../Image/DICT-Logo.png" />
          </image>
       </ImageView>
       <ImageView fx:id="ViewImage" fitHeight="150.0" fitWidth="200.0" layoutX="16.0" layoutY="148.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="16.0" />
@@ -32,10 +32,10 @@
             <Font name="Verdana" size="18.0" />
          </font>
       </Label>
-      <TextField layoutX="384.0" layoutY="50.0" AnchorPane.topAnchor="15.0" />
-      <TextField layoutX="384.0" layoutY="100.0" AnchorPane.topAnchor="55.0" />
-      <TextField layoutX="384.0" layoutY="150.0" AnchorPane.topAnchor="95.0" />
-      <TextField layoutX="384.0" layoutY="200.0" AnchorPane.topAnchor="135.0" />
+      <TextField fx:id="tfPropNo" editable="false" layoutX="384.0" layoutY="50.0" opacity="0.6" AnchorPane.topAnchor="15.0" />
+      <TextField fx:id="tfSerialNo" editable="false" layoutX="384.0" layoutY="100.0" opacity="0.6" AnchorPane.topAnchor="55.0" />
+      <TextField fx:id="tfLoc" layoutX="384.0" layoutY="150.0" opacity="0.6" AnchorPane.topAnchor="95.0" />
+      <TextField fx:id="tfRem" editable="false" layoutX="384.0" layoutY="200.0" opacity="0.6" AnchorPane.topAnchor="135.0" />
       <Label layoutX="222.0" layoutY="136.0" text="Remarks     " AnchorPane.leftAnchor="222.0" AnchorPane.topAnchor="136.0">
          <font>
             <Font name="Verdana" size="18.0" />
