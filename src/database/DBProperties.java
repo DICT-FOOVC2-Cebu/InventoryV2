@@ -41,7 +41,7 @@ public class DBProperties {
             properties.setProperty("port", "3306");
             properties.setProperty("db", "inventorysysv2");
             properties.setProperty("user", "root");
-            properties.setProperty("password", "root");
+            properties.setProperty("password", "");
             properties.store(output, null);
             output.close();
         } catch (FileNotFoundException ex) {

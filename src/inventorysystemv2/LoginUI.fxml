@@ -40,25 +40,25 @@
             <Blend />
          </effect>
       </ImageView>
-        <Button fx:id="btnLogin" blendMode="EXCLUSION" layoutX="328.0" layoutY="259.0" onAction="#btnLogin" prefHeight="39.0" prefWidth="114.0" rotate="-1.0" style="-fx-background-radius: 100;" text="Login">
-         <font>
-            <Font name="System Bold" size="18.0" />
-         </font></Button>
       <ImageView fitHeight="39.0" fitWidth="42.0" layoutX="153.0" layoutY="206.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Image/images%20(1).png" />
          </image>
       </ImageView>
-      <PasswordField fx:id="passwordField1" layoutX="200.0" layoutY="210.0" prefHeight="30.0" prefWidth="242.0" style="-fx-background-radius: 200;">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </PasswordField>
       <TextField fx:id="textField1" layoutX="192.0" layoutY="146.0" prefHeight="30.0" prefWidth="242.0" style="-fx-background-radius: 200;">
          <font>
             <Font size="14.0" />
          </font>
       </TextField>
+      <PasswordField fx:id="passwordField1" layoutX="200.0" layoutY="210.0" prefHeight="30.0" prefWidth="242.0" style="-fx-background-radius: 200;">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </PasswordField>
+        <Button fx:id="btnLogin" blendMode="EXCLUSION" layoutX="328.0" layoutY="259.0" onAction="#btnLogin" prefHeight="39.0" prefWidth="114.0" rotate="-1.0" style="-fx-background-radius: 100;" text="Login">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></Button>
       <Text layoutX="14.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inventory System With QR Code" wrappingWidth="468.00000240653753">
          <font>
             <Font name="Bank Gothic Medium BT" size="24.0" />

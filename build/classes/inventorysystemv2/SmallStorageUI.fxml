@@ -1,21 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="603.0" prefWidth="753.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.141" fx:controller="inventorysystemv2.SmallStorageUIController">
+<AnchorPane id="AnchorPane" prefHeight="603.0" prefWidth="753.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="inventorysystemv2.SmallStorageUIController">
    <children>
-      <BorderPane prefHeight="603.0" prefWidth="753.0">
-         <center>
-            <ImageView fitHeight="476.0" fitWidth="460.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
-               <image>
-                  <Image url="@../Image/images1.jpg" />
-               </image>
-            </ImageView>
-         </center>
-      </BorderPane>
+      <AnchorPane prefHeight="86.0" prefWidth="753.0">
+         <children>
+            <ComboBox fx:id="comboBox" accessibleRole="LIST_VIEW" editable="true" layoutX="195.0" layoutY="31.0" prefWidth="150.0" />
+            <Label fx:id="label" layoutX="79.0" layoutY="35.0" text="Search item:" />
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

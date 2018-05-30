@@ -8,9 +8,13 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="InventorySystemV2.jar" size="457087" download="eager" />
-    <jar href="lib\core-3.3.2.jar" size="546512" download="eager" />
+    <jar href="InventorySystemV2.jar" size="466876" download="eager" />
+    <jar href="lib\bridj-0.6.2.jar" size="878674" download="eager" />
+    <jar href="lib\core-3.1.0.jar" size="538421" download="eager" />
     <jar href="lib\mysql-connector-java-5.1.23-bin.jar" size="834126" download="eager" />
+    <jar href="lib\slf4j-api-1.7.2.jar" size="26083" download="eager" />
+    <jar href="lib\webcam-capture-0.3.10.jar" size="409084" download="eager" />
+    <jar href="lib\zxing-javase.jar" size="14542" download="eager" />
   </resources>
   <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="InventorySystemV2" >
     <param name="requiredFXVersion" value="8.0+"/>

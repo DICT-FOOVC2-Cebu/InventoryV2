@@ -5,7 +5,6 @@
  */
 package inventorysystemv2;
 
-import java.awt.Color;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -27,7 +26,7 @@ public class OptUIController implements Initializable {
     
     @FXML
      private void BackButton(ActionEvent event) throws IOException {
-        
+      /*log out button*/  
         
      
      Parent RegViewParent = FXMLLoader.load(getClass().getResource("LoginUI.fxml"));
@@ -40,11 +39,11 @@ public class OptUIController implements Initializable {
         window.show();
     }
     @FXML
-     private void AddButton(ActionEvent event) throws IOException {
-        
+     private void ReadButton(ActionEvent event) throws IOException {
+      /*log out button*/  
         
      
-     Parent RegViewParent = FXMLLoader.load(getClass().getResource("AddingUI.fxml"));
+     Parent RegViewParent = FXMLLoader.load(getClass().getResource("QRCodeReader.fxml"));
         
         Scene RegviewScene = new Scene(RegViewParent);
         
@@ -53,6 +52,36 @@ public class OptUIController implements Initializable {
         window.setScene(RegviewScene);
         window.show();
     }
+    @FXML
+     private void AddButton(ActionEvent event) throws IOException {
+       /*add button*/
+        
+     
+     Parent RegViewParent = FXMLLoader.load(getClass().getResource("AddingUI.fxml"));
+        
+        Scene RegviewScene = new Scene(RegViewParent);
+        
+     
+        Stage window = new Stage();
+        window.setScene(RegviewScene);
+        window.show();
+    }
+     @FXML
+     private void StorageButton(ActionEvent event) throws IOException {
+        
+        
+     
+     Parent RegViewParent = FXMLLoader.load(getClass().getResource("SmallStorageUI.fxml"));
+        
+        Scene RegviewScene = new Scene(RegViewParent);
+        
+     
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        window.setScene(RegviewScene);
+        window.show();
+    }
+     
+     
     /**
      * Initializes the controller class.
      */

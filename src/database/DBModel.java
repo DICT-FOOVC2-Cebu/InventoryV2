@@ -68,8 +68,8 @@ public class DBModel {
                     + "  `Amount` double DEFAULT NULL,\n"
                     + "  `QRCode` VARCHAR(50),\n"
                     + "  `Status` VARCHAR(100),\n"
-                    + "  PRIMARY KEY (`PropId`),\n"
-                    + "  UNIQUE INDEX `PropId` (`PropId` ASC));");
+                    + "  PRIMARY KEY (`ProdId`),\n"
+                    + "  UNIQUE INDEX `ProdId` (`ProdId` ASC));");
             pst.execute();
 //            pst = con.mkDataBase().prepareStatement("CREATE TABLE if not exists " + db + ".`Users` (\n"
 //                    + "  `Id` int(11) NOT NULL AUTO_INCREMENT,\n"

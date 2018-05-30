@@ -84,6 +84,11 @@ private ComboBox cbStatus;
     DBProperties dBProperties = new DBProperties();
     String db = dBProperties.loadPropertiesFile();
     
+    @Override
+    protected void finalize() throws Throwable {
+        super.finalize(); //To change body of generated methods, choose Tools | Templates.
+    }
+    
     
 @FXML
 private void GenerateButton(ActionEvent event) throws IOException {
@@ -146,7 +151,7 @@ private void dbQuery(){
         
         con = dbConnection.geConnection();
                     try {
-                pst = con.prepareStatement("insert into "+db+".additem values(?,?,?,?,?,?,?,?,?,?,?)");
+                pst = con.prepareStatement("insert into "+db+".AddItem values(?,?,?,?,?,?,?,?,?,?,?)");
                 pst.setString(1, null);
                 pst.setBlob(2, (Blob) null);
                 pst.setString(3, item.snNo);
