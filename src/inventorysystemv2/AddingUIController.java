@@ -19,9 +19,12 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
+import java.util.Observable;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -44,8 +47,9 @@ import javafx.stage.StageStyle;
  * @author Ralph
  */
 public class AddingUIController implements Initializable {
-   
-  
+    
+    ObservableList<String> cbStatusList = FXCollections.observableArrayList("Pending","Resolved");
+    
 @FXML
 private Button btnSave;
 
@@ -76,6 +80,8 @@ private TextArea taDesc;
 @FXML
 private ComboBox cbStatus;
 
+
+
     Items item = new Items();
     DBConnection dbConnection = new DBConnection();
     Connection con;
@@ -87,6 +93,8 @@ private ComboBox cbStatus;
     @Override
     protected void finalize() throws Throwable {
         super.finalize(); //To change body of generated methods, choose Tools | Templates.
+        
+        
     }
     
     
@@ -181,6 +189,8 @@ private void dbQuery(){
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        cbStatus.setValue("Pending");
+        cbStatus.setItems(cbStatusList);
     }    
     
 }
