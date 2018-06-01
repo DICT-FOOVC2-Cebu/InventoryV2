@@ -9,6 +9,7 @@ import com.google.zxing.BarcodeFormat;
 import com.google.zxing.WriterException;
 import com.google.zxing.common.BitMatrix;
 import com.google.zxing.qrcode.QRCodeWriter;
+import com.sun.deploy.panel.GeneralPanel;
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
@@ -23,11 +24,15 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.print.JobSettings;
+import javafx.print.PageLayout;
+import javafx.print.PrinterJob;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 /**
@@ -44,13 +49,24 @@ public class GenerateUIController implements Initializable {
     private ImageView ViewImage;
     @FXML
     private TextField tfPropNo, tfSerialNo, tfLoc, tfRem;
+    @FXML
+    private AnchorPane genPane;
+    
     
     public void setText(String propNo, String serialNo, String remarks){
         tfPropNo.setText(propNo);
         tfSerialNo.setText(serialNo);
         tfRem.setText(remarks);
     }
-    
+    public void print(){
+        PrinterJob job = PrinterJob.createPrinterJob();
+        Node node = genPane;
+        
+        if(job!=null){
+            job.printPage(node);
+            job.endJob();
+        }
+    }
     public void showQRCode(String qrCode){
 QRCodeWriter qrCodeWriter = new QRCodeWriter();
         String qrString = qrCode;
@@ -77,7 +93,11 @@ QRCodeWriter qrCodeWriter = new QRCodeWriter();
             }
             
             System.out.println("Success...");
-            
+//        PrinterJob job = PrinterJob.createPrinterJob();
+//        if(job!=null){
+//        job.showPrintDialog(genPane.getScene().getWindow());
+//        job.printPage(genPane);
+//        }    
         } catch (WriterException ex) {
             Logger.getLogger(GenerateUIController.class.getName()).log(Level.SEVERE, null, ex);
         }

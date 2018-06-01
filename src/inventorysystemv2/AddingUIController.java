@@ -30,6 +30,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.print.PrinterJob;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -38,6 +39,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -49,6 +51,9 @@ import javafx.stage.StageStyle;
 public class AddingUIController implements Initializable {
     
     ObservableList<String> cbStatusList = FXCollections.observableArrayList("Pending","Resolved");
+    
+@FXML
+private AnchorPane genPane;
     
 @FXML
 private Button btnSave;
@@ -119,7 +124,9 @@ private void GenerateButton(ActionEvent event) throws IOException {
         Scene RegviewScene = new Scene(RegViewParent);
         Stage window = new Stage();
         window.setScene(RegviewScene);
-        window.showAndWait();
+        window.show();
+        generate.print();
+
     }
     @FXML
     private void saveButton(ActionEvent event) throws IOException {
