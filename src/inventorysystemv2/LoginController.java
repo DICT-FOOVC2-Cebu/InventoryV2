@@ -7,19 +7,12 @@ package inventorysystemv2;
 
 import database.DBConnection;
 import database.DBProperties;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.OutputStream;
 import java.net.URL;
 import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.Properties;
+
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -32,7 +25,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -55,8 +47,6 @@ public class LoginController implements Initializable {
     private Button btnLogin;
     
     private Connection con;
-    private PreparedStatement pst;
-    private ResultSet rs;
     
    DBProperties dbProperties = new DBProperties();
     String db = dbProperties.loadPropertiesFile();
@@ -99,24 +89,8 @@ public class LoginController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        mkDbProperties();
+        dbProperties.mkDbProperties();
     }
-    public void mkDbProperties() {
-    Properties properties = new Properties();
-    OutputStream output = null;
-        try {
-            output = new FileOutputStream("database.properties");
-            properties.setProperty("host", "localhost");
-            properties.setProperty("port", "3306");
-            properties.setProperty("db", "inventorysysv2");
-            properties.setProperty("user", "root");
-            properties.setProperty("password", "");
-            properties.store(output, null);
-            output.close();
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(InventorySystemV2.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(InventorySystemV2.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
+
+    
 }

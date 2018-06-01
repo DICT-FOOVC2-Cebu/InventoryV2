@@ -48,7 +48,7 @@ public class OptUIController implements Initializable {
         Scene RegviewScene = new Scene(RegViewParent);
         
      
-        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Stage window =  new Stage();
         window.setScene(RegviewScene);
         window.show();
     }
