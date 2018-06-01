@@ -28,6 +28,7 @@ import javafx.beans.property.StringProperty;
 import javafx.concurrent.Task;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.scene.image.Image;
+import javafx.stage.Stage;
 
 public class WebCamImageProvider extends Task<Void> {
 
@@ -82,7 +83,7 @@ public class WebCamImageProvider extends Task<Void> {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		}
+		}              
 		webCam.close();
 		return null;
 	}

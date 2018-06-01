@@ -24,6 +24,9 @@ import javafx.stage.Stage;
  */
 public class OptUIController implements Initializable {
     
+    
+    
+    
     @FXML
      private void BackButton(ActionEvent event) throws IOException {
       /*log out button*/  
@@ -48,7 +51,7 @@ public class OptUIController implements Initializable {
         Scene RegviewScene = new Scene(RegViewParent);
         
      
-        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Stage window = new Stage();
         window.setScene(RegviewScene);
         window.show();
     }
@@ -65,6 +68,7 @@ public class OptUIController implements Initializable {
         Stage window = new Stage();
         window.setScene(RegviewScene);
         window.show();
+        
     }
      @FXML
      private void StorageButton(ActionEvent event) throws IOException {

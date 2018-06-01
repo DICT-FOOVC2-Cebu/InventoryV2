@@ -48,6 +48,7 @@ public class QRCodeReader extends Application implements Initializable {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+               
 	}
 
 	@Override
@@ -66,5 +67,7 @@ public class QRCodeReader extends Application implements Initializable {
 				t.start();
 			}
 		});
+          
+                
 	}
 } 

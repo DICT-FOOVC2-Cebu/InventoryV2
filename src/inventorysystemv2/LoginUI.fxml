@@ -55,7 +55,7 @@
             <Font size="14.0" />
          </font>
       </PasswordField>
-        <Button fx:id="btnLogin" blendMode="EXCLUSION" layoutX="328.0" layoutY="259.0" onAction="#btnLogin" prefHeight="39.0" prefWidth="114.0" rotate="-1.0" style="-fx-background-radius: 100;" text="Login">
+        <Button fx:id="btnLogin" blendMode="EXCLUSION" layoutX="328.0" layoutY="259.0" onKeyPressed="#buttonPressed" prefHeight="39.0" prefWidth="114.0" rotate="-1.0" style="-fx-background-radius: 100;" text="Login">
          <font>
             <Font name="System Bold" size="18.0" />
          </font></Button>

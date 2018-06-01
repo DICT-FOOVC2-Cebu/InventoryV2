@@ -33,6 +33,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
+import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -62,7 +63,11 @@ public class LoginController implements Initializable {
     String db = dbProperties.loadPropertiesFile();
     
     @FXML
-    private void btnLogin(ActionEvent event) throws IOException{
+    public void buttonPressed(KeyEvent event) throws IOException
+    {
+    if(event.getCode().toString().equals("ENTER"))
+    {
+        //do something
         DBConnection dbCon = new DBConnection();
         con = dbCon.geConnection();
         if(con!=null){
@@ -91,8 +96,11 @@ public class LoginController implements Initializable {
                 alert.initStyle(StageStyle.UNDECORATED);
                 alert.showAndWait();
             }
-            
-        }
+        
+    }
+    }
+    
+    
      
     
     
