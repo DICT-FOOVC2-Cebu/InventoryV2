@@ -51,11 +51,10 @@ public class OptUIController implements Initializable {
         Scene RegviewScene = new Scene(RegViewParent);
         
      
-<<<<<<< HEAD
+
         Stage window = new Stage();
-=======
-        Stage window =  new Stage();
->>>>>>> 79507f68e77773e41d441d349805ab850097ae25
+ 
+
         window.setScene(RegviewScene);
         window.show();
     }
